@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-6">
+        <form role="form">
+            <div class="form-group">
+                <label for="search">搜索</label>
+                <input type="text" placeholder="请输入搜索关键词" class="form-control" id="search" #search (keydown.enter)="submit(search.value)" />
+            </div>
+            <div class="form-group">
+                <input type="button" value="搜索" class="btn btn-success" (click)="submit(search.value)" />
+            </div>
+        </form>
+    </div>
+</div>
+<div *ngIf="result?.length">
+    <div class="row">
+        <ng-container *ngFor="let item of result">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVkNGZkNzRkZWMgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWQ0ZmQ3NGRlYyI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS41IiB5PSIxMDUuNyI+MjQyeDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg=="
+                        alt="..." style="width:242px;height:200px;">
+                    <div class="caption">
+                        <h3><a [routerLink]="['./../album',item.id]">{{item.name ? item.name:'--'}}</a></h3>
+                        <p>{{item.album ? item.album:'--'}}</p>
+                        <p>
+                            <a [routerLink]="['./../track',item.id]" class="btn btn-primary" role="button">详情</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<div *ngIf="result?.length == 0">
+    <h3 class="text-warning">查无结果,请更换搜索关键词</h3>
+</div>

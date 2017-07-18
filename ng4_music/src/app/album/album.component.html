@@ -1,0 +1,20 @@
+<div>
+    <table class=" table table-bordered">
+        <tr>
+            <th>id</th>
+            <th>filename</th>
+            <th>name</th>
+            <th>size</th>
+            <th>type</th>
+        </tr>
+        <ng-container *ngFor="let item of result">
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.filename}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.size}}</td>
+                <td>{{item.type}}</td>
+            </tr>
+        </ng-container>
+    </table>
+</div>

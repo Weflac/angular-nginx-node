@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group">
+                <li class="list-group-item"><a [routerLink]="['search']" routerLinkActive="active">search</a></li>
+                <li class="list-group-item"><a [routerLink]="['album',1]" routerLinkActive="active">album</a></li>
+                <li class="list-group-item"><a [routerLink]="['track',2]" routerLinkActive="active">track</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
