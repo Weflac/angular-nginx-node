@@ -18,7 +18,7 @@ const mysql = require("mysql");
 module.exports = function (sql,arg,callback) {
     //1.创建连接
     let config = mysql.createConnection({
-        host:"120.24.156.230", //数据库的地址
+        host:"localhost", //数据库的地址
         user:"root", //数据库用户名
         password:"root", //数据库密码
         port:"3306", //mysql数据库的端口号
