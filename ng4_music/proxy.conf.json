@@ -2,5 +2,9 @@
     "/albumlist": {
         "target": "http://localhost:3000",
         "secure": true
+    },
+    "/userlist": {
+        "target": "http://localhost:3000",
+        "secure": true
     }
 }

@@ -6,6 +6,6 @@ export class GetuserService {
 
   constructor(private http: Http) { }
   getUser(id: any) {
-    return this.http.request(`/node/userlist?id=${id}`).map(res => res.json());
+    return this.http.request(`/userlist?id=${id}`).map(res => res.json());
   }
 }
